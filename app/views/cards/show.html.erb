@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @card.type %>
+</p>
+
+<p>
+  <strong>Pin:</strong>
+  <%= @card.pin %>
+</p>
+
+<p>
+  <strong>Veriy pin:</strong>
+  <%= @card.veriy_pin %>
+</p>
+
+<p>
+  <strong>Card number:</strong>
+  <%= @card.card_number %>
+</p>
+
+<p>
+  <strong>Cvv:</strong>
+  <%= @card.cvv %>
+</p>
+
+<p>
+  <strong>Expiry:</strong>
+  <%= @card.expiry %>
+</p>
+
+<p>
+  <strong>Card name:</strong>
+  <%= @card.card_name %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @card.account_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @card.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

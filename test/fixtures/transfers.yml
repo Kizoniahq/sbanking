@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account_number: MyString
+  routine_number: MyString
+  account_pin: MyString
+  amount: MyString
+  user_id: 1
+  account: one
+  otp: MyString
+  tx_id: MyString
+  transfer_type: MyString
+  account_name: MyString
+
+two:
+  account_number: MyString
+  routine_number: MyString
+  account_pin: MyString
+  amount: MyString
+  user_id: 1
+  account: two
+  otp: MyString
+  tx_id: MyString
+  transfer_type: MyString
+  account_name: MyString

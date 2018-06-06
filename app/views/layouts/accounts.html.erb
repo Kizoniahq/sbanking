@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Online Account </title>
+    <%= csrf_meta_tags %>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"  content=" Have all your banking information right at your hands using our online platform we provide all services best for you"/>
+
+    <%= stylesheet_link_tag    'accounts', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'accounts', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <% if Account.where(user_id: current_user.id).exists?%>
+
+      <%= render "shared/sidebar" %>
+      <%= render "shared/headermenu" %>
+      <% else %>
+      <%end %>
+
+      <% if notice %>
+    <div class="col-md-8 col-md-offset-2">
+    <div class="alert alert-info alert-with-icon" data-notify="container">
+                                  <button type="button" aria-hidden="true" class="close">×</button>
+                                  <span data-notify="icon" class="ti-bell"></span>
+                                  <span data-notify="message"><%= notice %>.</span>
+                              </div>
+                            </div>
+                              <% end %>
+    <%= yield %>
+  </div>
+  </body>
+</html>

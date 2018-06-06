@@ -1,0 +1,11 @@
+<%= simple_form_for ([ @account, @transfer, @transfer.otps.build]) do |f| %>
+<div class="content">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <%= f.input :otp, class: "border-input form-control", placeholder: "Verify OTP ", label:" One Time Password"%>
+      <%= f.submit :submit, class: "btn btn-primary" %>
+
+    </div>
+  </div>
+</div>
+<% end %>

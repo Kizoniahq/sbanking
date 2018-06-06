@@ -1,0 +1,52 @@
+<div class="content">
+
+
+<div class="container-fluid">
+  <div class="content">
+
+
+<div class="row">
+  <div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Account History</h4>
+                    <p class="category"></p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-striped">
+                        <thead>
+                          <th>Transfer Type</th>
+                          <th>Beneficiary Name </th>
+                          <th>Amount</th>
+                          <th> Status </th>
+                        </thead>
+                        <tbody>
+                          <% @deposits.each do |t| %>
+                          <tr>
+                            <td><%= t.payment_method %></td>
+                            <td><%= t.depositors_name %></td>
+                            <td>$<%= t.amount%></td>
+                            <td><%= t.status %></td>
+                          </tr>
+                          <% end %>
+                          <% @transfers.each do |t| %>
+                          <tr>
+                            <td><%= t.transfer_type %></td>
+                            <td><%= t.account_name %></td>
+                            <td>$<%= t.amount%></td>
+                            <td><%= t.status %></td>
+                          </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>

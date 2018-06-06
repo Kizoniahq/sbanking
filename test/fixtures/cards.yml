@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  pin: MyString
+  veriy_pin: MyString
+  card_number: MyString
+  cvv: MyString
+  expiry: 2018-05-28 19:18:15
+  card_name: MyString
+  account_id: 1
+  user_id: 1
+
+two:
+  type: 
+  pin: MyString
+  veriy_pin: MyString
+  card_number: MyString
+  cvv: MyString
+  expiry: 2018-05-28 19:18:15
+  card_name: MyString
+  account_id: 1
+  user_id: 1

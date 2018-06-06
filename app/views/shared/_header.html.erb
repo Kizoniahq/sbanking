@@ -1,0 +1,44 @@
+<!--========================================================
+                          HEADER
+=========================================================-->
+<header>
+    <div id="stuck_container" class="stuck_container">
+        <div class="container">
+
+            <div class="brand">
+
+                <div class="brand_name">
+                  <%= link_to  "R&C", root_path %>
+                </div>
+
+                <p class="brand_slogan inset-2">
+                    Group
+                </p>
+            </div>
+
+            <nav class="nav">
+                <ul class="sf-menu" data-type="navbar">
+                    <li class="active">
+                      <%= link_to  "Home", root_path %>
+                    </li>
+                    <li>  <%= link_to "About", page_path("about") %>
+                    </li>
+                    <li>   <%= link_to "Services", page_path("service") %>
+                    </li>
+
+                    <li>
+                        <%= link_to "Contact Us", new_contact_path %>
+                    </li>
+                    <li>
+                        <%= link_to "Get Started", new_user_registration_path %>
+                    </li>
+                    <li><%= link_to "Login", new_user_session_path, class: "btn btn-primary btn-md" %>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</header>
+<!--========================================================
+                          CONTENT
+=========================================================-->

@@ -1,0 +1,248 @@
+<% content_for(:body_attributes) do %>
+data-turbolinks="false"
+<% end %>
+<% if Account.where(user_id: current_user.id).exists?%>
+<% @accounts.take(1).each do |a| %>
+<div class="content">
+
+    <div class="container-fluid">
+
+        <div class="row">
+          <%= link_to a do %>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-warning text-center">
+                                    <i class="ti-server"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Accounts</p>
+                                    <%= Account.where(user_id: current_user.id).count %>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <i class="ti-reload"></i> Updated now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-success text-center">
+                                    <i class="ti-wallet"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+
+                                    <p>Revenue</p>
+                                    $<%= a.account_balance %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <i class="ti-calendar"></i> Last day
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-danger text-center">
+                                    <i class="ti-id-badge"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Account Number</p>
+                                    <%= a.account_number %>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <i class="ti-id-badge"></i> Routine Number <%= a.routine_number %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-info text-center">
+                                    <i class="ti-credit-card"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                  <%= link_to a do %>
+                                    <p>Funds</p>
+                                        <small>Transfer </small>
+                                    <%end%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <i class="ti-reload"></i> <%= a.account_type %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Users Behavior</h4>
+                        <p class="category">24 Hours performance</p>
+                    </div>
+                    <div class="content">
+                        <div id="chartHours" class="ct-chart"></div>
+                        <div class="footer">
+                            <div class="chart-legend">
+                                <i class="fa fa-circle text-info"></i>
+                                <i class="fa fa-circle text-danger"></i>
+                                <i class="fa fa-circle text-warning"></i>
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="ti-reload"></i> Updated 3 minutes ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    <!--    <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+
+                    <div class="header">
+                        <h4 class="title">Email Statistics</h4>
+                        <p class="category">Last Campaign Performance</p>
+                    </div>
+                    <div class="content">
+                        <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
+
+                        <div class="footer">
+                            <div class="chart-legend">
+                                <i class="fa fa-circle text-info"></i> Open
+                                <i class="fa fa-circle text-danger"></i> Bounce
+                                <i class="fa fa-circle text-warning"></i> Unsubscribe
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="ti-timer"></i> Campaign sent 2 days ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card ">
+                    <div class="header">
+                        <h4 class="title">2015 Sales</h4>
+                        <p class="category">All products including Taxes</p>
+                    </div>
+                    <div class="content">
+                        <div id="chartActivity" class="ct-chart"></div>
+
+                        <div class="footer">
+                            <div class="chart-legend">
+                                <i class="fa fa-circle text-info"></i> Tesla Model S
+                                <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="ti-check"></i> Data information certified
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+  <%end%>
+<% else %>
+
+      <div class="container">
+        <div class="col-md-8 col-md-offset-2" style="margin-top:120px;">
+
+          <div class="card">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <p class="text-center">
+                <%= image_tag "logo.svg", class: "text-center" %>
+              </div>
+              </div>
+
+
+            <div class="card-title">
+              <h3 class="text-center"> Enroll  Account </h3>
+            </div>
+
+            <div class="card-body">
+              <div class="text-center" style="padding-top:20px; padding-bottom:20px;">
+                <%= link_to "Create Account", new_account_path, class: "btn btn-info btn-fill btn-wd" %>
+                <br />
+                <br />
+                <%= link_to "Sign-out", destroy_user_session_path, method: :delete %>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  <%= javascript_include_tag 'chartist.min' %>
+  <%= javascript_include_tag 'demo' %>
+
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+
+          demo.initChartist();
+
+          $.notify({
+              icon: 'ti-gift',
+              message: "Welcome to <b>Reyl & Cie Bank </b> -"
+
+            },{
+                type: 'success',
+                timer: 4000
+            });
+
+      });
+  </script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>REYL & CIE GROUP </title>
+    <%= csrf_meta_tags %>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"  content=" Have all your banking information right at your hands using our online platform we provide all services best for you"/>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="page">
+      <% if notice %>
+      <div class="col-md-8 col-md-offset-2">
+      <div class="alert alert-info alert-with-icon" data-notify="container">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span data-notify="icon" class="ti-bell"></span>
+                                    <span data-notify="message"><%= notice %>.</span>
+                                </div>
+                              </div>
+                    <% end %>
+                  <% if alert %>
+                        <div class="col-md-8 col-md-offset-2">
+                          <div class="alert alert-info alert-with-icon" data-notify="container">
+                            <button type="button" aria-hidden="true" class="close">×</button>
+                            <span data-notify="icon" class="ti-bell"></span>
+                            <span data-notify="message"><%= alert %>.</span>
+                                </div>
+                                  </div>
+                                    <% end %>
+      <%= render "shared/header" %>
+    <%= yield %>
+    <%= render "shared/footer" %>
+  </div>
+  </body>
+</html>

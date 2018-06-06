@@ -1,0 +1,83 @@
+<% if Card.where(user_id: current_user).exists? %>
+<div class="content">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-6 col-sm-6">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-warning text-center">
+                                    <i class="ti-server"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Cards</p>
+                                    <%= Card.where(user_id: current_user.id).count %>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-6 col-sm-6">
+                    <div class="card">
+                        <div class="content">
+                            <div class="row">
+
+                                <div class="col-xs-5">
+                                    <div class="icon-big icon-warning text-center">
+                                        <i class="ti-credit-card"></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-7">
+                                    <div class="numbers">
+                                      <% @cards.take(1).each do |a| %>
+
+                                        <p><%= a.card_name %></p>
+
+                                        <%= a.card_number %>
+                                        <% end %>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+<%else%>
+<div class="content">
+    <div class="container-fluid">
+      <div class="row" style="margin-top:50px;">
+        <div class="col-md-8 col-md-offset-2">
+
+
+        <div class="card">
+          <div class="image">
+            <%= image_tag "page-2_img1.jpg", class: "img-fluid" %>
+          </div>
+          <div class="content">
+            <div class="header text-center">
+                <h4 class="title">Start making  your banking exprience easier</h4>
+                <br />
+              <%= link_to "Apply for your Credit/debits card", new_card_path, class: "btn btn-primary text-center"%>
+ </div>
+          </div>
+
+        </div>
+      </div>
+       </div>
+     </div>
+   </div>
+<% end %>

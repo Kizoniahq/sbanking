@@ -1,0 +1,63 @@
+
+
+  <%= simple_form_for (@account), class: "form-horizontal" do |f| %>
+  <%= f.error_notification %>
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">Personal Information </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.input :account_type, :as => :select, collection: ["Checkings", "Savings", "Credit"] %>
+          </div>
+        </div>
+
+          <div class="row">
+            <div class="col-md-12">
+                <%= f.input :phone_number, required: true %>
+            </div>
+            </div>
+            <div class="row">
+
+
+            <div class="col-md-12 form-group">
+              <%= f.input :dob, label: "Date Of Birth", as: :date, :start_year => 1910, :end_year => 2010, required: true, class: "form-control border-input" %>
+            </div>
+</div>
+
+
+        <div class="row">
+        <div class="col-md-12">
+          <p>Please Upload a Vaild ID </p>
+            <%= f.input :image, as: :file, placeholder: "Upload a Vaild ID Card" %>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">Account Security </div>
+            <div class="panel-body">
+              <div class="row">
+              <div class="col-md-12">
+                <%= f.input :mother_name, label: "Your Mother's maiden Name" %>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <%= f.input :account_pin, as: :password, required: true %>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+    <div class="row">
+      <div class="col-md-12">
+          <%= f.button :submit, class: "btn btn-primary" %>
+      </div>
+    </div>
+<% end %>

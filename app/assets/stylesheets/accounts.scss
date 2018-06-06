@@ -1,0 +1,30 @@
+// Place all the styles related to the accounts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+@import "animate.min";
+@import "paper-dashboard";
+@import "themify-icons";
+@import "demo";
+
+
+
+
+.modal-backdrop.in {
+  display: none;
+    opacity: 0 !important;
+    filter: alpha(opacity=50);
+}
+.modal-backdrop {
+  display:none !important;
+    /* position: fixed; */
+    /* top: 0; */
+    /* right: 0; */
+    /* bottom: 0; */
+    /* left: 0; */
+    /* z-index: 1040; */
+    /* background-color: #000; */
+}
+input{
+  border: 1px solid !important;
+}

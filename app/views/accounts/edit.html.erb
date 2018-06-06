@@ -1,0 +1,31 @@
+<div class="content">
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-md-8 ">
+    <div class="card">
+      <div class="content">
+
+
+      <div class="card-title">
+        <h3 class="text-center"> Account Information</h3>
+      </div>
+      <div class="card-body">
+        <%= render 'form', account: @account %>
+            </div>
+    </div>
+  </div>
+  </div>
+  <div class="col-md-4">
+    <div class="content">
+      <div class="card card-image">
+
+        <%= image_tag (@account.image_url.to_s), class:" img-responsive"  %>
+        <div class="card-title">
+        <h4 class="text-center">  Identity Card </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  amount: MyString
+  status: MyString
+  depositors_name: MyString
+  date: 2018-05-22 23:13:27
+  account_id: 1
+  user: one
+
+two:
+  type: 
+  amount: MyString
+  status: MyString
+  depositors_name: MyString
+  date: 2018-05-22 23:13:27
+  account_id: 1
+  user: two

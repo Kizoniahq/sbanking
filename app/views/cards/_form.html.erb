@@ -1,0 +1,22 @@
+
+<%= simple_form_for(@card) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading"> fill the card application form </div>
+      <div class="panel-body">
+  <div class="form-inputs">
+    <%= f.input :card_name, lebel: "Cardholder's Name" %>
+    <%= f.input :card_type, as: :select, collection: ["Credit", "Debit"]  %>
+    <%= f.input :pin, as: :password %>
+    <%= f.input :veriy_pin, as: :password %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+</div>
+</div>
+</div>
+<% end %>
